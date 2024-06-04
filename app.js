@@ -92,7 +92,6 @@ app.get("/user/:id", (req, res) => {
 
 //Post Request to add data
 app.post("/user/add.html", (req, res) => {
-  req.body.FirstName = req.body.FirstName.toLowerCase();
     Customer.create(req.body)
       .then((result) => {
         res.redirect("/");
@@ -105,6 +104,7 @@ app.post("/user/add.html", (req, res) => {
 //Post Request to search
 app.post("/search", (req, res) => {
    const searchText = req.body.searchText.trim();
+
     Customer.find({ FirstName: req.body.searchText })
       .then((result) => {
         res.render("user/search", { arr: result });
