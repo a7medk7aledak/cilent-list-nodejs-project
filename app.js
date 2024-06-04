@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // moment library
 var moment = require("moment");
-
 //to Delete and update
 var methodOverride = require("method-override");
 app.use(methodOverride("_method"));
@@ -106,7 +105,6 @@ app.post("/user/add.html", (req, res) => {
 //Post Request to search
 app.post("/search", (req, res) => {
    const searchText = req.body.searchText.trim();
-  console.log({ FirstName: new RegExp(`^${searchText}$`, "i") });
     Customer.find({ FirstName: req.body.searchText })
       .then((result) => {
         res.render("user/search", { arr: result });
