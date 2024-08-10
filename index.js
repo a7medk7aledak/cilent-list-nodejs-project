@@ -23,7 +23,7 @@ app.use(methodOverride("_method"));
 //mongoose
 mongoose
   .connect(
-    "mongodb+srv://ahmedkhaledNodejs:AK$01005701983$AK@cilentlistnodejsproject.g4kity7.mongodb.net/all-data?retryWrites=true&w=majority&appName=cilentListNodejsProject"
+    "mongodb+srv://ahmedkhaledNodejs:55555@cilentlistnodejsproject.g4kity7.mongodb.net/?retryWrites=true&w=majority&appName=cilentListNodejsProject"
   )
   .then(() => {
     app.listen(port, () => {
