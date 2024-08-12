@@ -4,37 +4,33 @@ const Schema = mongoose.Schema;
 // define the Schema (the structure of the article)
 const customerSchema = new mongoose.Schema(
   {
-    firstName: {
+    FirstName: {
       type: String,
       required: true,
     },
-    lastName: {
+    LastName: {
       type: String,
       required: true,
     },
-    email: {
+    Email: {
       type: String,
       required: true,
       index: true,
       unique: true,
     },
-    password: {
+    Telephone: {
       type: String,
       required: true,
     },
-    telephone: {
+    Age: {
       type: String,
       required: true,
     },
-    age: {
+    Country: {
       type: String,
       required: true,
     },
-    country: {
-      type: String,
-      required: true,
-    },
-    gender: {
+    Gender: {
       type: String,
       required: true,
     },

@@ -21,18 +21,31 @@ var methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
 //mongoose
+
+// Connection URL
+const uri = "mongodb+srv://ahmedakcustomer:01005701983ak@cilentlistnodejsproject.g4kity7.mongodb.net/all-data?retryWrites=true&w=majority&appName=cilentListNodejsProject";
+
+// Connect to MongoDB
 mongoose
-  .connect(
-    "mongodb+srv://ahmedkhaledNodejs:55555@cilentlistnodejsproject.g4kity7.mongodb.net/?retryWrites=true&w=majority&appName=cilentListNodejsProject"
-  )
+  .connect(uri)
   .then(() => {
-    app.listen(port, () => {
-      console.log(`http://localhost:${port}`);
-    });
+    console.log("Connected to MongoDB and customers collection successfully");
+        app.listen(port, () => {
+          console.log(`http://localhost:${port}`);
+        });
+    // Example operation: Fetch all documents from the customers collection
+    Customer.find()
+      .then((customers) => {
+        console.log("Customers:", customers);
+      })
+      .catch((err) => {
+        console.error("Error retrieving customers:", err);
+      });
   })
   .catch((err) => {
-    console.log(err);
+    console.error('Error connecting to MongoDB:', err);
   });
+
 //make static file run outomaticly
 const path = require("path");
 const livereload = require("livereload");
