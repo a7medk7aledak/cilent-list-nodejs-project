@@ -27,4 +27,3 @@ An advanced customer management system designed to streamline data handling with
 6. Start the development server
    ```
    npm run dev
- 
