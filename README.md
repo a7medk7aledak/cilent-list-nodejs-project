@@ -18,5 +18,13 @@ An advanced customer management system designed to streamline data handling with
 1. Clone the repository:
    ```bash
    git clone https://github.com/a7medk7aledak/cilent-list-nodejs-project.git
-
+2. Navigate to the project directory
+   ```
+   cd bak-blog
+4. Install dependencies
+   ```
+   npm install
+6. Start the development server
+   ```
+   npm run dev
  
